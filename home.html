@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
  
@@ -7,170 +7,118 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-	<title>Vending Machine</title>
+	<title>Vending Machine Web App</title>
 	
 	 <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
         <!-- Additional CSS files -->
+			
+	<style>
+        .col-sm-4 {border:groove}  
+        #money-field {margin-left: 25%}
+    </style>
    
    </head>
    
    <body>
 	
-	<div class="container  bg-light">
-	
-            <h1 class="text-center">Vending Machine</h1>
-            <hr/>
+		<div class="container  bg-light">
+				<h1 class="text-center">Vending Machine</h1>
+            <hr>
 			
-			<!-- left side loaded items inventory detail -->
+<!-- left side loaded items inventory detail -->
 			
-			  <div class="row">
-			
-                <div  class="col-md-8 "></div>
-				<div  id="itemDivs">
-				<input type ="hidden" 
-				       id="hiddenId"/>
-				
-                
+			  <div class="row" style = "text-align:center">
+                <div  class="col-sm-8 "  id="vending-items">
 				</div>
+				 
+					
+<!-- right side forms display  -->
 				
-				<!-- right side forms display  -->
-				
-			<!-- form 1 Money ,readonly one input field form and four Add money buttons  -->
+<!-- form 1 Money ,readonly one input field form and four Add money buttons  -->
 			
-			<div class="col-md-4 text-center">
-				
-				<div class="row">
-
-					<h2>Total $ In</h2>
-					
-					<div class="row">
-						<div class="col-md-2"></div>
-
-						<div class="form-group col-md-8">
-							<input type="text" 
-									readonly class="form-control text-center" 
-									id="money-field"/>	
-						</div>
-						
-					<!-- form 1 Money , 4 Add money buttons   -->
-					
-						<div class="col-md-2"></div>
-					</div>
-					
-					<div class="row">
+			<div class="col-sm-4 ">
+				<div class="form-group">
+					<h2 style="text-align: center">Total $ In</h2>
+						<input  type="text" 
+								readonly class="form-control " 
+								id="money-field"
+								style="width:50%"/>										
 						<button type="button" 
-						        id="add-dollar-button" 
-						        class="btn btn-default col-md-5">
+						        class="btn btn-default "
+								id="add-dollar-button" 
+								style="width:48%">
 							Add Dollar
 						</button>
-						
-					<div class="col-md-2">
-						</div>
-					<button type="button" 
-							id="add-quarter-button" 
-							class="btn btn-default col-md-5">
+						<button type="button" 
+								class="btn btn-default "
+								id="add-quarter-button"
+								style="width:48%">
 							Add Quarter
 						</button>
-						</div>
-					<br>
-					<div class="row">
-						<button type="button" 
-								id="add-dime-button" 
-								class="btn btn-default col-md-5">
+						<button type="button"  
+								class="btn btn-default"
+								id="add-dime-button"
+								style="width:48%">
 							Add Dime
 						</button>
-					<div class="col-md-2">
-						</div>
 						<button type="button" 
+								class="btn btn-default "
 								id="add-nickel-button" 
-								class="btn btn-default col-md-5">
+								style="width:48%">
 							Add Nickel
-						</button>
-					</div>
-
-					
-	
- </div>
- <hr/>
+						</button>					
+        </div>
+   <hr>
  <!-- form 2 Bussiness  ,readonly two input fields  and one button to make purchases  form  -->
  
- 				<div class="row">
-				
-					<h2>Messages</h2>
-
-					<div class="form-group">
-					
+ 		<div class="form-group">
+					<h2 style="text-align:center">Messages</h2>
 						<input type="text" 
-								readonly class="form-control text-center" 
-								id="messages-field"/>	
-					</div>
+								readonly class="form-control" 
+								id="messages-field"/>
+	   <div class="form-group">									
+			<label for = "vending-item" class="col-sm-2 label-control">Item:</label>
+            <p></p>
+			<div class="col-sm-6">
+			<input type="text" 
+			       readonly class="form-control" 
+				   id="item-field"/>	
+		     <p></p>
 
- 					<div class="row">
+				</div>
+			</div>
 
-						<span class="col-md-3" style="font-size: 1.7em">Item:</span>
-
-
-						<div class="form-group col-md-9">
-						
-							<input type="text" 
-									readonly class="form-control" 
-									id="item-field"/>	
-						
-						</div>
-					
-					</div>
-
-  <div class="row">
-						<div class="col-md-1"></div>
-						
-						<button type="button" 
-						        id="make-purchase-button" 
-						        class="btn btn-default col-md-10">
-							<span style="font-size: 1.5em">Make Purchase</span>
-							
-						</button>
-						
-						<div class="col-md-1"></div>
-						
-					</div>
-					</div>
-				<hr/>
+		<div class="form-group">
+			<button type="button" 
+				    class="btn btn-primary form-control col-sm-offset-1"
+				    id="make-purchase-button" 
+					style="width:85%">Make Purchase</button>
+																				
+				</div>
+			</div>
+		<hr>
  <!-- form 3 Change  ,readonly one input field   and one 'Change Return' button    -->
  
- <div class="row">
-					<div class="row">
-						<h2>Change</h2>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-1"></div>
-					
-					<div class="form-group col-md-10">
-						<input type="text" readonly class="form-control text-center" id="change-field"/>
-					</div>
-					<div class="col-md-1"></div>
-				</div>
-				<div class="row">
-					<br>
-					<div class="col-md-2"></div>
-					
+	     <div class="form-group" style="text-center">
+			 <h2 style="text-align:center" id="change-header">Change</h2>
+					<div class="form-group"> 
+						<input type="text" 
+						      readonly class="form-control col-md-offset-1 col-sm-8" 
+					          id="change-field"
+						      style="width:80%"/>
+			</div>
+				<div class="form-group" style= "text-center">
 					<button type="button" 
-							id="change-return-button" 
-							class="btn btn-default col-md-8">
-							
-						<span style="font-size: 1.5em">Change Return</span>
-						
-					</button>
-					
-					<div class="col-md-2"></div>
-				</div>
-
- </div>
- </div>
+							class="btn btn-default col-sm-offset-4"
+							id="return-change">Change Return</button>
+				  </div>			
+	  </div>
+    </div>			
+   </div>
   </div>
+</div>
 	
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!-- use the the full jQuery build, NOT the slim build-->
@@ -182,4 +130,5 @@
     <script src="js/home.js"></script>
 
     </body>
+	
 </html>
